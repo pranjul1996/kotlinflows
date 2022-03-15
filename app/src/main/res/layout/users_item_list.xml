@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.macamps.kotlinflows.data.Users" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nameEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@{user.name}"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/emailEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@{user.email}"
+            app:layout_constraintTop_toBottomOf="@+id/nameEt"
+            tools:layout_editor_absoluteX="5dp"
+            tools:text="Email" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/genderEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@{user.gender}"
+            app:layout_constraintTop_toBottomOf="@+id/emailEt"
+            tools:layout_editor_absoluteX="5dp"
+            tools:text="Gender" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/statusEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@{user.status}"
+            app:layout_constraintTop_toBottomOf="@+id/genderEt"
+            tools:layout_editor_absoluteX="5dp"
+            tools:text="Status" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

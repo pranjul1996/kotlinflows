@@ -9,7 +9,6 @@ buildscript {
         classpath(BuildPlugins.kotlin)
         classpath(BuildPlugins.navigation)
         classpath(kotlin("serialization", version = Versions.kotlinGradlePlugin))
-        classpath("com.google.gms:google-services:4.3.10")
         classpath(BuildPlugins.hilt)
     }
 }

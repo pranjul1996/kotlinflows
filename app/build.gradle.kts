@@ -6,7 +6,6 @@ plugins {
     id("dagger.hilt.android.plugin")
     id("androidx.navigation.safeargs")
     kotlin("plugin.serialization")
-    id("com.google.gms.google-services")
 }
 
 android {
@@ -62,8 +61,8 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true
-//        dataBinding = true
+//        viewBinding = true
+        dataBinding = true
     }
 
     packagingOptions {
@@ -75,14 +74,13 @@ dependencies {
     implementation(Dependency.appCompat)
     implementation(Dependency.materialDesign)
     implementation(Dependency.constraintLayout)
-    implementation(Dependency.legacySupport)
-    implementation("androidx.activity:activity-ktx:1.4.0")
-    implementation("'androidx.fragment:fragment-ktx:1.1.0")
-    implementation("com.google.dagger:hilt-android:2.40.1")
-    kapt("com.google.dagger:hilt-compiler:2.38.1")
+//    implementation(Dependency.legacySupport)
+    implementation(Dependency.hilt)
+    kapt(Dependency.hiltCompiler)
+//    implementation("androidx.activity:activity-ktx:1.4.0")
 
-    debugImplementation("com.readystatesoftware.chuck:library:1.1.0")
-    releaseImplementation("com.readystatesoftware.chuck:library-no-op:1.1.0")
+//    debugImplementation("com.readystatesoftware.chuck:library:1.1.0")
+//    releaseImplementation("com.readystatesoftware.chuck:library-no-op:1.1.0")
 
 
     testImplementation(Dependency.junit)
@@ -106,7 +104,7 @@ dependencies {
 
     //Lifecycle
     implementation(Dependency.lifecycleExtensions)
-    implementation(Dependency.dataBinding)
+//    implementation(Dependency.dataBinding)
 
     //network
     implementation(Dependency.retrofit)

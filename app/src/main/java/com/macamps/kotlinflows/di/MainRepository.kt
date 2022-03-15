@@ -1,14 +1,24 @@
 package com.macamps.kotlinflows.di
 
-import com.macamps.kotlinflows.ApiService
+import com.macamps.kotlinflows.BaseApiResponse
+import com.macamps.kotlinflows.MainRepoDataSource
+import com.macamps.kotlinflows.NetworkResult
 import com.macamps.kotlinflows.data.Users
+import dagger.hilt.android.scopes.ActivityRetainedScoped
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import retrofit2.Call
+import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
-class MainRepository @Inject constructor(private val api: ApiService) {
-    val usersFlow: Flow<Call<List<Users>>> = flow {
-        emit(api.getUsers())
+@ActivityRetainedScoped
+class MainRepository @Inject constructor(private val mainRepoDataSource: MainRepoDataSource) :
+    BaseApiResponse() {
+
+    suspend fun getUsers(): Flow<NetworkResult<ArrayList<Users>>> {
+        return flow {
+            emit(safeApiCall { mainRepoDataSource.getUsers() })
+        }.flowOn(Dispatchers.IO)
     }
+
 }

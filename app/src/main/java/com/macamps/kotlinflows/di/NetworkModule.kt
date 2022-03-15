@@ -1,6 +1,8 @@
 package com.macamps.kotlinflows.di
 
+import android.os.Build
 import com.macamps.kotlinflows.ApiService
+import com.macamps.kotlinflows.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,7 +19,8 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(okHttpClient: OkHttpClient) = Retrofit.Builder().client(okHttpClient)
+    fun provideRetrofit(okHttpClient: OkHttpClient) = Retrofit.Builder().client(okHttpClient).baseUrl(
+        BuildConfig.API_URL)
         .addConverterFactory(GsonConverterFactory.create()).build()
 
     @Provides
