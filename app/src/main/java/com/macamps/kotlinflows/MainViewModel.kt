@@ -15,28 +15,32 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(private val repository: MainRepository) : ViewModel() {
     private val mutableState = MutableStateFlow<ArrayList<Users>>(arrayListOf())
     private val error = MutableStateFlow("")
-    private val isLoading = MutableStateFlow(false)
+    private val _isLoading = MutableStateFlow(false)
+    val isLoading: StateFlow<Boolean> = _isLoading
     val stateFlow: StateFlow<ArrayList<Users>> = mutableState
 
     fun getUsers() {
         viewModelScope.launch {
+            _isLoading.emit(true)
             repository.getUsers().collect { response ->
                 when (response) {
                     is NetworkResult.Success -> {
-                        response.data?.let { mutableState.value = it
-                        mutableState.emit(it)}
+                        response.data?.let {
+                            mutableState.value = it
+                            mutableState.emit(it)
+                        }
 
-                        isLoading.emit(false)
+                        _isLoading.emit(false)
                     }
                     is NetworkResult.Error -> {
                         response.message?.let {
                             error.value = it
                         }
-                        isLoading.emit(false)
+                        _isLoading.emit(false)
                         // show error message
                     }
                     is NetworkResult.Loading -> {
-                        isLoading.emit(true)
+                        _isLoading.emit(true)
                         // show a progress bar
                     }
                 }
