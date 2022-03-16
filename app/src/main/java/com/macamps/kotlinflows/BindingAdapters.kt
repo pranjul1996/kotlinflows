@@ -1,7 +1,8 @@
 package com.macamps.kotlinflows
 
+import androidx.appcompat.widget.AppCompatTextView
+import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.macamps.kotlinflows.data.Users
 
@@ -25,7 +26,15 @@ class BindingAdapters {
             data.let { referencesAdapter.addItems(it) }
         }
 
+        @BindingAdapter("onColorChanged")
+        @JvmStatic
+        fun AppCompatTextView.onColorChange(status:String) {
 
+            when(status){
+                "active"-> this.setTextColor(ContextCompat.getColor(context,R.color.green))
+                "inactive"-> this.setTextColor(ContextCompat.getColor(context,R.color.red))
+            }
+        }
     }
 
 }

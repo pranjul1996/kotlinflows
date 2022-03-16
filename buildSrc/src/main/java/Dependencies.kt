@@ -16,8 +16,14 @@ object Dependency {
     val extJunit by lazy { "androidx.test.ext:junit:${Versions.extJunit}" }
     val androidxCore by lazy { "androidx.core:core-ktx:${Versions.coreKtx}" }
     val appCompat by lazy { "androidx.appcompat:appcompat:${Versions.appCompat}" }
+
     val hilt by lazy { "com.google.dagger:hilt-android:${Versions.hilt}" }
     val hiltCompiler by lazy { "com.google.dagger:hilt-compiler:${Versions.hilt}" }
+
+    val roomDb by lazy { "androidx.room:room-runtime:${Versions.room}" }
+    val roomCompiler by lazy { "androidx.room:room-compiler:${Versions.room}" }
+    val roomKtx by lazy { "androidx.room:room-ktx:${Versions.room}" }
+
 
     //splash
     val splashScreen by lazy { "androidx.core:core-splashscreen:${Versions.splashScreen}" }
