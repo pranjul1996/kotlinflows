@@ -2,7 +2,7 @@ package com.macamps.kotlinflows
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.macamps.kotlinflows.Utils.isNetworkConnected
+import com.macamps.kotlinflows.Utils.getConnectionType
 import com.macamps.kotlinflows.data.Users
 import com.macamps.kotlinflows.di.MainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -26,14 +26,14 @@ class MainViewModel @Inject constructor(
     fun getUsers() {
         viewModelScope.launch {
             _isLoading.emit(true)
-            if (!isNetworkConnected()) {
+            if (getConnectionType()==0) { // return from database
                 repository.getUsersFromDb().collect {
                     if (it.isNotEmpty()) {
                         mutableState.emit(it as ArrayList<Users>)
                         _isLoading.emit(false)
                     }
                 }
-            } else
+            } else // return from remote data
                 repository.getUsers().collect { response ->
                     when (response) {
                         is NetworkResult.Success -> {
