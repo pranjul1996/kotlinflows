@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.macamps.kotlinflows.MainViewModel" />
+            type="com.macamps.kotlinflows.viewModel.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

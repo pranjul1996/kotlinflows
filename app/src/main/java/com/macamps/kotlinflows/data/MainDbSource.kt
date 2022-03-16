@@ -1,7 +1,7 @@
-package com.macamps.kotlinflows
+package com.macamps.kotlinflows.data
 
-import com.macamps.kotlinflows.data.Users
 import com.macamps.kotlinflows.database.UsersDao
+import com.macamps.kotlinflows.model.Users
 import javax.inject.Inject
 
 class MainDbSource @Inject constructor(private val userDao: UsersDao) {

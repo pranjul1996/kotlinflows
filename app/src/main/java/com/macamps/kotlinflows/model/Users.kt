@@ -1,4 +1,4 @@
-package com.macamps.kotlinflows.data
+package com.macamps.kotlinflows.model
 
 
 import androidx.room.Entity

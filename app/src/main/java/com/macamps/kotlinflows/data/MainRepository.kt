@@ -1,10 +1,8 @@
-package com.macamps.kotlinflows.di
+package com.macamps.kotlinflows.data
 
-import com.macamps.kotlinflows.BaseApiResponse
-import com.macamps.kotlinflows.MainDbSource
-import com.macamps.kotlinflows.MainRepoDataSource
-import com.macamps.kotlinflows.NetworkResult
-import com.macamps.kotlinflows.data.Users
+import com.macamps.kotlinflows.base.BaseApiResponse
+import com.macamps.kotlinflows.base.NetworkResult
+import com.macamps.kotlinflows.model.Users
 import dagger.hilt.android.scopes.ActivityRetainedScoped
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

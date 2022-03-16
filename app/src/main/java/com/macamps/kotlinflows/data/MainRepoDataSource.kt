@@ -1,6 +1,6 @@
-package com.macamps.kotlinflows
+package com.macamps.kotlinflows.data
 
-import com.macamps.kotlinflows.data.ApiService
+import com.macamps.kotlinflows.data.network.ApiService
 import javax.inject.Inject
 
 class MainRepoDataSource @Inject constructor(private val api: ApiService) {

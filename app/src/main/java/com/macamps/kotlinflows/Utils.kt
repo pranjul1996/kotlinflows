@@ -3,6 +3,7 @@ package com.macamps.kotlinflows
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import com.macamps.kotlinflows.base.App
 
 
 object Utils {

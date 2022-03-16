@@ -1,10 +1,12 @@
-package com.macamps.kotlinflows
+package com.macamps.kotlinflows.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.macamps.kotlinflows.data.MainDbSource
+import com.macamps.kotlinflows.base.NetworkResult
 import com.macamps.kotlinflows.Utils.getConnectionType
-import com.macamps.kotlinflows.data.Users
-import com.macamps.kotlinflows.di.MainRepository
+import com.macamps.kotlinflows.model.Users
+import com.macamps.kotlinflows.data.MainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

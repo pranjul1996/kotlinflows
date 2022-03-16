@@ -4,8 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.macamps.kotlinflows.data.Users
-import kotlinx.coroutines.flow.Flow
+import com.macamps.kotlinflows.model.Users
 
 @Dao
 interface UsersDao {

@@ -1,4 +1,4 @@
-package com.macamps.kotlinflows
+package com.macamps.kotlinflows.base
 
 sealed class NetworkResult<T>(
     val data: T? = null,

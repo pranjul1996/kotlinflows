@@ -1,7 +1,8 @@
 package com.macamps.kotlinflows.di
 
-import com.macamps.kotlinflows.MainDbSource
-import com.macamps.kotlinflows.MainRepoDataSource
+import com.macamps.kotlinflows.data.MainDbSource
+import com.macamps.kotlinflows.data.MainRepoDataSource
+import com.macamps.kotlinflows.data.MainRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

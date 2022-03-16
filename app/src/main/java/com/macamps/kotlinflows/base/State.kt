@@ -1,4 +1,4 @@
-package com.macamps.kotlinflows
+package com.macamps.kotlinflows.base
 
 sealed class State<out T: Any> {
     data class Success<out T: Any>(val data: T): State<T>()

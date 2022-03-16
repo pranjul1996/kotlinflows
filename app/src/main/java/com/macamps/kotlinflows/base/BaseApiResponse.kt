@@ -1,4 +1,4 @@
-package com.macamps.kotlinflows
+package com.macamps.kotlinflows.base
 
 import retrofit2.Response
 

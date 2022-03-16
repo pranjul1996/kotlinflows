@@ -1,4 +1,4 @@
-package com.macamps.kotlinflows
+package com.macamps.kotlinflows.base
 
 import android.app.Application
 import android.content.Context

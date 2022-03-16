@@ -7,7 +7,7 @@
 
         <variable
             name="user"
-            type="com.macamps.kotlinflows.data.Users" />
+            type="com.macamps.kotlinflows.model.Users" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

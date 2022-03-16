@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
-import com.macamps.kotlinflows.data.Users
+import com.macamps.kotlinflows.model.Users
 import com.macamps.kotlinflows.databinding.UsersItemListBinding
 
 class UsersAdapter : RecyclerView.Adapter<UsersAdapter.ViewHolder>() {
