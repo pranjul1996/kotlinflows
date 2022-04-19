@@ -7,7 +7,6 @@ import com.google.gson.annotations.SerializedName
 
 @Entity
 data class Users(
-
     @PrimaryKey
     @SerializedName("id")
     val id: Int,
@@ -19,4 +18,4 @@ data class Users(
     val name: String,
     @SerializedName("status")
     var status: String
-)
+    )

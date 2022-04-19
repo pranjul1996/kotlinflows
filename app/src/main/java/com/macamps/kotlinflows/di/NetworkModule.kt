@@ -30,7 +30,6 @@ object NetworkModule {
         )
     ).build()
 
-
     @Provides
     @Singleton
     fun provideApiService(retrofit: Retrofit) = retrofit.create(ApiService::class.java)

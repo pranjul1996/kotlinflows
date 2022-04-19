@@ -6,6 +6,7 @@ plugins {
     id("dagger.hilt.android.plugin")
     id("androidx.navigation.safeargs")
     kotlin("plugin.serialization")
+
 }
 
 android {
@@ -61,7 +62,7 @@ android {
     }
 
     buildFeatures {
-//        viewBinding = true
+        viewBinding = true
         dataBinding = true
     }
 
@@ -76,6 +77,7 @@ dependencies {
     implementation(Dependency.constraintLayout)
     implementation(Dependency.roomDb)
     implementation(Dependency.roomKtx)
+    implementation("com.google.android.gms:play-services-ads-lite:20.6.0")
     kapt(Dependency.roomCompiler)
 //    implementation(Dependency.legacySupport)
     implementation(Dependency.hilt)
